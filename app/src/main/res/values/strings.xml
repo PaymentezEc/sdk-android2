@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NuveiSDK</string>
+    <string name="sdk_label">SDK</string>
+    <string name="init_env">Init Simulation</string>
+</resources>

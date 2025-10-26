@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp"
+    tools:context=".HomeActivity">
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:src="@drawable/nuvei_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/header_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Nº"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo" />
+
+    <TextView
+        android:id="@+id/header_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toEndOf="@id/header_no"
+        app:layout_constraintTop_toTopOf="@id/header_no"
+        app:layout_constraintEnd_toStartOf="@+id/header_price"/>
+
+    <TextView
+        android:id="@+id/header_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/header_no" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_no" />
+
+    <TextView
+        android:id="@+id/item_no1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider1"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/item_description1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Milk Shake"
+        android:layout_marginStart="25dp"
+        app:layout_constraintStart_toEndOf="@id/item_no1"
+        app:layout_constraintTop_toTopOf="@id/item_no1"
+        app:layout_constraintEnd_toStartOf="@+id/item_price1"/>
+
+    <TextView
+        android:id="@+id/item_price1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$10.00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/item_no1" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_no1" />
+
+    <TextView
+        android:id="@+id/item_no2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider2"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/item_description2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Cupcake"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toEndOf="@id/item_no2"
+        app:layout_constraintTop_toTopOf="@id/item_no2"
+        app:layout_constraintEnd_toStartOf="@+id/item_price2"/>
+
+    <TextView
+        android:id="@+id/item_price2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$7.00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/item_no2" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_no2" />
+
+    <TextView
+        android:id="@+id/item_no3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider3"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/item_description3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="bread"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toEndOf="@id/item_no3"
+        app:layout_constraintTop_toTopOf="@id/item_no3"
+        app:layout_constraintEnd_toStartOf="@+id/item_price3"/>
+
+    <TextView
+        android:id="@+id/item_price3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$5.00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/item_no3" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_no3" />
+
+    <TextView
+        android:id="@+id/card_status_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_background"
+        android:padding="16dp"
+        android:text="No card selected\nTo continue, you need to select one"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toTopOf="@+id/pay_order_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="24dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/pay_order_button"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="Pay order"
+        android:textSize="17sp"
+        app:cornerRadius="12dp"
+        app:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
