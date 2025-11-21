@@ -5,6 +5,8 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.nuvei.nuvei_sdk.helper.NuveiCallBack;
 import com.nuvei.nuvei_sdk.models.Environment;
+import com.nuvei.nuvei_sdk.models.addCard.AddCardRequest;
+import com.nuvei.nuvei_sdk.models.addCard.AddCardResponse;
 import com.nuvei.nuvei_sdk.models.debit.DebitRequest;
 import com.nuvei.nuvei_sdk.models.CardToken;
 import com.nuvei.nuvei_sdk.models.debit.DebitResponse;
@@ -19,6 +21,8 @@ import com.nuvei.nuvei_sdk.models.refund.OrderRefund;
 import com.nuvei.nuvei_sdk.models.refund.RefundRequest;
 import com.nuvei.nuvei_sdk.models.refund.RefundResponse;
 import com.nuvei.nuvei_sdk.models.refund.TransactionRefund;
+import com.nuvei.nuvei_sdk.models.verify.OtpRequest;
+import com.nuvei.nuvei_sdk.models.verify.OtpResponse;
 import com.nuvei.nuvei_sdk.network.NuveiClient;
 import com.nuvei.nuvei_sdk.network.NuveiService;
 
@@ -181,4 +185,12 @@ public class NuveiSDKRepository {
         });
 
     }
+
+
+
+
+
+
+
+
 }

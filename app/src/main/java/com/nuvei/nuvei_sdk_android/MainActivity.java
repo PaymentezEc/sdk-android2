@@ -2,9 +2,7 @@ package com.nuvei.nuvei_sdk_android;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,11 +11,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.button.MaterialButton;
-import com.nuvei.nuvei_sdk.NuveiSDK;
-import com.nuvei.nuvei_sdk.helper.NuveiCallBack;
-import com.nuvei.nuvei_sdk.models.error.ErrorResponseModel;
-import com.nuvei.nuvei_sdk.models.listCard.CardItemList;
-import com.nuvei.nuvei_sdk.models.listCard.ListCardResponse;
+import com.nuvei.nuvei_sdk.internal.NuveiSDK;
 import com.nuvei.nuvei_sdk_android.helper.Constants;
 
 public class MainActivity extends AppCompatActivity {

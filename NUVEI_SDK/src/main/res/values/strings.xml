@@ -1,0 +1,26 @@
+<resources>
+    <string name="card_number">Card number</string>
+    <string name="holder_name">Holder name</string>
+    <string name="expiration_date">MM/YY</string>
+    <string name="cvc">CVC</string>
+    <string name="otp_code">OTP code</string>
+    <string name="add_card">Add card</string>
+    <string name="verify_otp">Verify OTP</string>
+
+
+    <string name="error_card_number_required">Card number is required.</string>
+    <string name="error_card_number_invalid">Invalid card number.</string>
+
+    <string name="error_holder_name_required">Cardholder name is required.</string>
+    <string name="error_holder_name_invalid">Invalid cardholder name.</string>
+
+    <string name="error_expiration_required">Expiration date is required.</string>
+    <string name="error_expiration_invalid">Invalid expiration date.</string>
+    <string name="error_expiration_expired">The card is expired.</string>
+
+    <string name="error_cvc_required">CVC is required.</string>
+    <string name="error_cvc_invalid">Invalid CVC.</string>
+
+    <string name="error_otp_required">OTP code is required.</string>
+    <string name="error_otp_invalid">Invalid OTP code.</string>
+</resources>

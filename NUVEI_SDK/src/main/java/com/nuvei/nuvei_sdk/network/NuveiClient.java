@@ -1,7 +1,8 @@
 package com.nuvei.nuvei_sdk.network;
 
-import com.nuvei.nuvei_sdk.NuveiSDK;
-import com.nuvei.nuvei_sdk.helper.GlobalHelper;
+import android.util.Log;
+
+import com.nuvei.nuvei_sdk.internal.NuveiSDK;
 import com.nuvei.nuvei_sdk.models.Environment;
 
 import okhttp3.OkHttpClient;
