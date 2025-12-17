@@ -99,6 +99,7 @@ public class ListCardActivity extends AppCompatActivity  implements OnCardAction
     @Override
     public void onDeleteCard(String cardToken) {
         showLoading(true);
+        Log.v("elemincacion", "eliminar");
         NuveiSDK.getInstance().deleteCard("4", cardToken, new NuveiCallBack<DeleteCardResponse>() {
             @Override
             public void onSucces(DeleteCardResponse data) {

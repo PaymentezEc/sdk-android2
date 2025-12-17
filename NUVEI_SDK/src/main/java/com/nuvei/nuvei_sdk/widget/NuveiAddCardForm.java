@@ -36,6 +36,7 @@ import com.nuvei.nuvei_sdk.helper.NuveiCallBack;
 import com.nuvei.nuvei_sdk.helper.ThreeDsHandler;
 import com.nuvei.nuvei_sdk.internal.NuveiSDK;
 import com.nuvei.nuvei_sdk.listener.AddCardListener;
+import com.nuvei.nuvei_sdk.models.Environment;
 import com.nuvei.nuvei_sdk.models.addCard.AddCardRequest;
 import com.nuvei.nuvei_sdk.models.addCard.AddCardResponse;
 import com.nuvei.nuvei_sdk.models.addCard.BrowserInfo;
@@ -450,14 +451,15 @@ public class NuveiAddCardForm extends LinearLayout {
     }
 
     private void addCardRequest(String referenceId){
-
+        Environment env = NuveiSDK.getInstance().getEnvironment();
+        String baseUrl = env.isTestMode() ?  "https://nuvei-cres-dev-bkh4atahdegxa8dk.eastus-01.azurewebsites.net": "https://nuvei-cres-dev-bkh4atahdegxa8dk.eastus-01.azurewebsites.net/";
         String[] expiryDate = expiryDateTextInput.getText().toString().split("/");
         int expiryMonth = Integer.parseInt(expiryDate[0]);
         int expiryYear = CardHelper.completeYear(Integer.parseInt(expiryDate[1]));
         String cleanNumber = numberCardTextInput.getText().toString().replaceAll("\\D", "");
         UserDebit user = new UserDebit("4", "erick.guillen@nuvei.com");
         CardModel card = new CardModel(cleanNumber, holderNameTextInput.getText().toString(), expiryMonth, expiryYear, cvcCodeTextInput.getText().toString(), CardHelper.getCardInfo(cleanNumber).getTypeCode());
-        ThreeDS2Data threeDS2Data = new ThreeDS2Data("https://nuvei-cres-dev-bkh4atahdegxa8dk.eastus-01.azurewebsites.net/api/cres/save/"+referenceId, "browser");
+        ThreeDS2Data threeDS2Data = new ThreeDS2Data(baseUrl+ "api/cres/save/"+referenceId, "browser");
         BrowserInfo browserInfo = GlobalHelper.getBrowserInfo(context);
         ExtraParams extraParams = new ExtraParams(threeDS2Data, browserInfo);
         AddCardRequest addCardRequest = new AddCardRequest(user, card, extraParams);
