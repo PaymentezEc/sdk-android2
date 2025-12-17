@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_number">Número de tarjeta</string>
+    <string name="holder_name">Nombre titular</string>
+    <string name="expiration_date">MM/YY</string>
+    <string name="cvc">CVC</string>
+    <string name="otp_code">Código OTP</string>
+    <string name="add_card">Agregar tarjeta</string>
+    <string name="verify_otp">Verificar OTP</string>
+
+    <string name="error_card_number_required">El número de tarjeta es obligatorio.</string>
+    <string name="error_card_number_invalid">El número de tarjeta no es válido.</string>
+
+    <string name="error_holder_name_required">El nombre del titular es obligatorio.</string>
+    <string name="error_holder_name_invalid">El nombre del titular no es válido.</string>
+
+    <string name="error_expiration_required">La fecha de expiración es obligatoria.</string>
+    <string name="error_expiration_invalid">La fecha de expiración no es válida.</string>
+    <string name="error_expiration_expired">La tarjeta ya está expirada.</string>
+
+    <string name="error_cvc_required">El CVC es obligatorio.</string>
+    <string name="error_cvc_invalid">El CVC no es válido.</string>
+
+    <string name="error_otp_required">El código OTP es obligatorio.</string>
+    <string name="error_otp_invalid">El código OTP no es válido.</string>
+</resources>

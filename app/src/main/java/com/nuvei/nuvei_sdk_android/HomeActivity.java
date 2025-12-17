@@ -17,7 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
-import com.nuvei.nuvei_sdk.NuveiSDK;
+import com.nuvei.nuvei_sdk.internal.NuveiSDK;
 import com.nuvei.nuvei_sdk.helper.NuveiCallBack;
 import com.nuvei.nuvei_sdk.models.CardToken;
 import com.nuvei.nuvei_sdk.models.debit.DebitOrder;

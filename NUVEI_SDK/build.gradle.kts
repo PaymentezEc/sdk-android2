@@ -38,6 +38,8 @@ dependencies {
     implementation(libs.commons.codec)
     implementation(libs.retrofit.converter.gson)
     implementation(libs.okhttp.logging.interceptor)
+    implementation(libs.activity)
+    implementation(libs.constraintlayout)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

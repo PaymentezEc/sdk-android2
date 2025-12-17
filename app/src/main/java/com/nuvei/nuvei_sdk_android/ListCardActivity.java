@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,8 +16,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
-import com.nuvei.nuvei_sdk.NuveiSDK;
+import com.nuvei.nuvei_sdk.internal.NuveiSDK;
 import com.nuvei.nuvei_sdk.helper.NuveiCallBack;
+import com.nuvei.nuvei_sdk.models.deleteCard.DeleteCardResponse;
 import com.nuvei.nuvei_sdk.models.error.ErrorResponseModel;
 import com.nuvei.nuvei_sdk.models.listCard.CardItemList;
 import com.nuvei.nuvei_sdk.models.listCard.ListCardResponse;
@@ -50,7 +52,10 @@ public class ListCardActivity extends AppCompatActivity  implements OnCardAction
         });
 
         MaterialButton addCardButton = findViewById(R.id.add_card_button);
-
+        addCardButton.setOnClickListener(v->{
+            Intent intent = new Intent(ListCardActivity.this, AddCardActivity.class);
+            startActivity(intent);
+        });
 
 
         loadCards();
@@ -93,7 +98,24 @@ public class ListCardActivity extends AppCompatActivity  implements OnCardAction
 
     @Override
     public void onDeleteCard(String cardToken) {
+        showLoading(true);
+        Log.v("elemincacion", "eliminar");
+        NuveiSDK.getInstance().deleteCard("4", cardToken, new NuveiCallBack<DeleteCardResponse>() {
+            @Override
+            public void onSucces(DeleteCardResponse data) {
+                loadCards();
+                showLoading(false);
+                Toast.makeText(ListCardActivity.this, "Delete Succesfully", Toast.LENGTH_SHORT).show();
+            }
 
+            @Override
+            public void onError(ErrorResponseModel error) {
+                showLoading(false);
+                Toast.makeText(ListCardActivity.this, "Error to delete card", Toast.LENGTH_SHORT).show();
+                Log.e("Integrador", "Error: " + error.getError().getType());
+
+            }
+        });
     }
 
     public void onCardSelected(CardItemList card) {

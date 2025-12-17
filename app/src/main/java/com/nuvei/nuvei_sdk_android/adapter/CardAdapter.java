@@ -1,5 +1,6 @@
 package com.nuvei.nuvei_sdk_android.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,11 +31,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
         return new CardViewHolder(view);
     }
 
-    public void deleteCard(String tokencard){
 
-
-
-    }
 
     @Override
     public void onBindViewHolder(@NonNull CardViewHolder holder, int position) {
@@ -43,6 +40,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
         holder.cardNumber.setText("Card's number: **** **** **** " + card.getNumber());
         holder.deleteButton.setOnClickListener(view -> {
             if(listener != null){
+                Log.v("Aqui", "eliminar");
                 listener.onDeleteCard(card.getToken());
             }
         });

@@ -1,9 +1,7 @@
-package com.nuvei.nuvei_sdk;
-
-import android.util.Log;
+package com.nuvei.nuvei_sdk.internal;
 
 import com.nuvei.nuvei_sdk.helper.NuveiCallBack;
-import com.nuvei.nuvei_sdk.internal.NuveiSDKRepository;
+
 import com.nuvei.nuvei_sdk.models.Environment;
 import com.nuvei.nuvei_sdk.models.debit.DebitRequest;
 import com.nuvei.nuvei_sdk.models.debit.DebitResponse;
