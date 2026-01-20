@@ -452,12 +452,12 @@ public class NuveiAddCardForm extends LinearLayout {
 
     private void addCardRequest(String referenceId){
         Environment env = NuveiSDK.getInstance().getEnvironment();
-        String baseUrl = env.isTestMode() ?  "https://nuvei-cres-dev-bkh4atahdegxa8dk.eastus-01.azurewebsites.net": "https://nuvei-cres-dev-bkh4atahdegxa8dk.eastus-01.azurewebsites.net/";
+        String baseUrl = "https://cres.nuvei.com.ec";
         String[] expiryDate = expiryDateTextInput.getText().toString().split("/");
         int expiryMonth = Integer.parseInt(expiryDate[0]);
         int expiryYear = CardHelper.completeYear(Integer.parseInt(expiryDate[1]));
         String cleanNumber = numberCardTextInput.getText().toString().replaceAll("\\D", "");
-        UserDebit user = new UserDebit("4", "erick.guillen@nuvei.com");
+        UserDebit user = new UserDebit(userId, email);
         CardModel card = new CardModel(cleanNumber, holderNameTextInput.getText().toString(), expiryMonth, expiryYear, cvcCodeTextInput.getText().toString(), CardHelper.getCardInfo(cleanNumber).getTypeCode());
         ThreeDS2Data threeDS2Data = new ThreeDS2Data(baseUrl+ "api/cres/save/"+referenceId, "browser");
         BrowserInfo browserInfo = GlobalHelper.getBrowserInfo(context);
