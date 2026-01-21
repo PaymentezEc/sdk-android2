@@ -52,7 +52,7 @@ public class NuveiSDKRepository {
 
     public void initEnvironment(String appCode, String appKey, String serverCode, String serverKey, String clientId, String clientCode, boolean testMode){
         this.environment = new Environment(appCode, appKey, serverCode, serverKey, clientId, clientCode, testMode);
-        Log.v("Environment", this.environment.toString());
+        //Log.v("Environment", this.environment.toString());
     }
 
 
@@ -89,7 +89,7 @@ public class NuveiSDKRepository {
                  ErrorResponseModel error = new ErrorResponseModel(
                          new ErrorData("NetworkError", "", t.getMessage())
                  );
-                 Log.v("ErrorLoadCard", error.getError().getDescription() );
+                 //Log.v("ErrorLoadCard", error.getError().getDescription() );
                  callback.onError(error);
              }
          });
@@ -120,7 +120,7 @@ public class NuveiSDKRepository {
                  ErrorResponseModel error = new ErrorResponseModel(
                          new ErrorData("NetworkError", "", t.getMessage())
                  );
-                 Log.v("Error on delete Card", error.getError().getDescription() );
+                 //Log.v("Error on delete Card", error.getError().getDescription() );
                  callback.onError(error);
              }
          });
@@ -147,7 +147,7 @@ public class NuveiSDKRepository {
                  ErrorResponseModel error = new ErrorResponseModel(
                          new ErrorData("NetworkError", "", t.getMessage())
                  );
-                 Log.v("Error on delete Card", error.getError().getDescription() );
+                 //Log.v("Error on delete Card", error.getError().getDescription() );
                  callBack.onError(error);
              }
          });
@@ -179,7 +179,7 @@ public class NuveiSDKRepository {
                 ErrorResponseModel error = new ErrorResponseModel(
                         new ErrorData("NetworkError", "", t.getMessage())
                 );
-                Log.v("Error on delete Card", error.getError().getDescription() );
+                //Log.v("Error on delete Card", error.getError().getDescription() );
                 callBack.onError(error);
             }
         });

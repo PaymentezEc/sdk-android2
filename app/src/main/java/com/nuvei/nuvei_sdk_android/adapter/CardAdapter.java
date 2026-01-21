@@ -40,7 +40,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
         holder.cardNumber.setText("Card's number: **** **** **** " + card.getNumber());
         holder.deleteButton.setOnClickListener(view -> {
             if(listener != null){
-                Log.v("Aqui", "eliminar");
+               // Log.v("Aqui", "eliminar");
                 listener.onDeleteCard(card.getToken());
             }
         });

@@ -225,7 +225,7 @@ public class NuveiAddCardForm extends LinearLayout {
                     fArray[0] = new InputFilter.LengthFilter(cardInfoModel.getCvcNumber());
                     cvcCodeTextInput.setFilters(fArray);
                     current = formatted;
-                    Log.v("format", formatted);
+                   // Log.v("format", formatted);
                     numberCardTextInput.setText(formatted);
                     numberCardTextInput.setSelection(formatted.length());
                     numberCardTextInput.addTextChangedListener(this);
@@ -463,7 +463,7 @@ public class NuveiAddCardForm extends LinearLayout {
         BrowserInfo browserInfo = GlobalHelper.getBrowserInfo(context);
         ExtraParams extraParams = new ExtraParams(threeDS2Data, browserInfo);
         AddCardRequest addCardRequest = new AddCardRequest(user, card, extraParams);
-        Log.v("code", NuveiSDK.getInstance().getEnvironment().getAppCode());
+       // Log.v("code", NuveiSDK.getInstance().getEnvironment().getAppCode());
         NuveiClient client = new NuveiClient(NuveiSDK.getInstance().getEnvironment().getAppCode(),NuveiSDK.getInstance().getEnvironment().getAppKey());
         NuveiService service = client.getService();
         Call<AddCardResponse> call = service.addCard(addCardRequest);
@@ -755,7 +755,7 @@ public class NuveiAddCardForm extends LinearLayout {
                 ErrorResponseModel error = new ErrorResponseModel(
                         new ErrorData("NetworkError", "", t.getMessage())
                 );
-                Log.v("Error on delete Card", error.getError().getDescription() );
+               // Log.v("Error on delete Card", error.getError().getDescription() );
                 callBack.onError(error);
             }
         });
