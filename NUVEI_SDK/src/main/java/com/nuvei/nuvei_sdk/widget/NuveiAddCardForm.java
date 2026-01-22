@@ -225,7 +225,7 @@ public class NuveiAddCardForm extends LinearLayout {
                     fArray[0] = new InputFilter.LengthFilter(cardInfoModel.getCvcNumber());
                     cvcCodeTextInput.setFilters(fArray);
                     current = formatted;
-                    Log.v("format", formatted);
+                   // Log.v("format", formatted);
                     numberCardTextInput.setText(formatted);
                     numberCardTextInput.setSelection(formatted.length());
                     numberCardTextInput.addTextChangedListener(this);
@@ -452,18 +452,18 @@ public class NuveiAddCardForm extends LinearLayout {
 
     private void addCardRequest(String referenceId){
         Environment env = NuveiSDK.getInstance().getEnvironment();
-        String baseUrl = env.isTestMode() ?  "https://nuvei-cres-dev-bkh4atahdegxa8dk.eastus-01.azurewebsites.net": "https://nuvei-cres-dev-bkh4atahdegxa8dk.eastus-01.azurewebsites.net/";
+        String baseUrl = "https://cres.nuvei.com.ec";
         String[] expiryDate = expiryDateTextInput.getText().toString().split("/");
         int expiryMonth = Integer.parseInt(expiryDate[0]);
         int expiryYear = CardHelper.completeYear(Integer.parseInt(expiryDate[1]));
         String cleanNumber = numberCardTextInput.getText().toString().replaceAll("\\D", "");
-        UserDebit user = new UserDebit("4", "erick.guillen@nuvei.com");
+        UserDebit user = new UserDebit(userId, email);
         CardModel card = new CardModel(cleanNumber, holderNameTextInput.getText().toString(), expiryMonth, expiryYear, cvcCodeTextInput.getText().toString(), CardHelper.getCardInfo(cleanNumber).getTypeCode());
         ThreeDS2Data threeDS2Data = new ThreeDS2Data(baseUrl+ "api/cres/save/"+referenceId, "browser");
         BrowserInfo browserInfo = GlobalHelper.getBrowserInfo(context);
         ExtraParams extraParams = new ExtraParams(threeDS2Data, browserInfo);
         AddCardRequest addCardRequest = new AddCardRequest(user, card, extraParams);
-        Log.v("code", NuveiSDK.getInstance().getEnvironment().getAppCode());
+       // Log.v("code", NuveiSDK.getInstance().getEnvironment().getAppCode());
         NuveiClient client = new NuveiClient(NuveiSDK.getInstance().getEnvironment().getAppCode(),NuveiSDK.getInstance().getEnvironment().getAppKey());
         NuveiService service = client.getService();
         Call<AddCardResponse> call = service.addCard(addCardRequest);
@@ -755,7 +755,7 @@ public class NuveiAddCardForm extends LinearLayout {
                 ErrorResponseModel error = new ErrorResponseModel(
                         new ErrorData("NetworkError", "", t.getMessage())
                 );
-                Log.v("Error on delete Card", error.getError().getDescription() );
+               // Log.v("Error on delete Card", error.getError().getDescription() );
                 callBack.onError(error);
             }
         });

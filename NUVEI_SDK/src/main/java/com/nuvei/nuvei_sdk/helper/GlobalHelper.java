@@ -27,12 +27,12 @@ public class GlobalHelper {
 
     public static  String getAuthToken(String key, String code ){
         long time_stamp_time = System.currentTimeMillis()/1000;
-        Log.v("Key", String.valueOf(key.isEmpty()));
-        Log.v("code", String.valueOf(code.isEmpty()));
-        Log.v("timestap", String.valueOf(time_stamp_time));
+        //Log.v("Key", String.valueOf(key.isEmpty()));
+        //Log.v("code", String.valueOf(code.isEmpty()));
+        //Log.v("timestap", String.valueOf(time_stamp_time));
         String time_stamp_string = String.valueOf(time_stamp_time);
         String auth_token = code + ";" + time_stamp_string + ";" + getUniqueToken(key, time_stamp_string);
-        Log.v("token", Base64.encodeToString(auth_token.getBytes(), Base64.NO_WRAP));
+        //Log.v("token", Base64.encodeToString(auth_token.getBytes(), Base64.NO_WRAP));
         return Base64.encodeToString(auth_token.getBytes(), Base64.NO_WRAP);
     }
 

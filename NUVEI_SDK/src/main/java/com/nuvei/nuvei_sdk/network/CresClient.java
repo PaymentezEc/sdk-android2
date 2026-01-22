@@ -10,8 +10,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CresClient {
-    private static final String BASE_URL_PROD = "https://nuvei-cres-dev-bkh4atahdegxa8dk.eastus-01.azurewebsites.net/";
-    private static final String BASE_URL_TEST = "https://nuvei-cres-dev-bkh4atahdegxa8dk.eastus-01.azurewebsites.net/";
+    private static final String BASE_URL_PROD = "https://cres.nuvei.com.ec";
+    private static final String BASE_URL_TEST = "https://cres.nuvei.com.ec";
 
 
     public  Retrofit getClient(String token){
